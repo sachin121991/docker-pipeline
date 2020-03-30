@@ -33,7 +33,7 @@ node {
     stage('Remove Unused docker image') {
       
         sh "docker rmi registry.hub.docker.com/sachin1291/docker-slave:$BUILD_NUMBER"
-      
+        sh "docker rmi sachin1291/docker-slave:$BUILD_NUMBER"
     }
 }
     
