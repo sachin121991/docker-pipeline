@@ -14,5 +14,4 @@ node {
   docker.withRegistry( '', registryCredential ) {
    dockerImage.push()
    }
-  }
 }
