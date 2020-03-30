@@ -8,6 +8,6 @@ node {
  
   stage 'Docker push'
   docker.withRegistry( 'https://registry.hub.docker.com', 'dockerhub' ) {
-   dockerImage.push()
+   docker.image.push()
    }
 }
