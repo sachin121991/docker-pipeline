@@ -31,7 +31,6 @@ node {
         }
     }
     stage('Remove Unused docker image') {
-        sh "docker kill $( docker ps )"
         sh "docker run -dit -p 80:80 sachin1291/docker-slave:$BUILD_NUMBER"
         sh "docker rmi registry.hub.docker.com/sachin1291/docker-slave:($BUILD_NUMBER-1)"
         sh "docker rmi sachin1291/docker-slave:($BUILD_NUMBER-1)"
