@@ -1,17 +1,13 @@
 node {
-   environment {
-    registry = "sachin1291/docker-slave"
-    registryCredential = 'dockerhub'
-    dockerImage = ''
-  }
+   
   stage 'Checkout'
   git 'https://github.com/sachin121991/docker-pipeline.git'
  
   stage 'Docker build'
-  docker.build('testing')
+  docker.build('sachin1291/docker-slave')
  
   stage 'Docker push'
-  docker.withRegistry( '', registryCredential ) {
+  docker.withRegistry( 'https://registry.hub.docker.com', 'dockerhub' ) {
    dockerImage.push()
    }
 }
