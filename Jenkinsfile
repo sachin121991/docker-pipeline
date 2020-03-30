@@ -8,6 +8,6 @@ node {
  
   stage 'Docker push'
   docker.withRegistry( 'https://registry.hub.docker.com', 'dockerhub' ) {
-   docker.image.push()
+   docker.image('sachin1291/docker-slave').push('latest')  
    }
 }
