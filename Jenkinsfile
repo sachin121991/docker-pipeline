@@ -8,7 +8,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("sachin1291/docker-slave")
+        app = docker.build("sachin1291/docker-slave" + ":$BUILD_NUMBER") 
     }
 
     stage('Test image') {
